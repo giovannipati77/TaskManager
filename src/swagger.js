@@ -14,7 +14,7 @@ const options = {
       },
     ],
   },
-  apis: ['./swagger/tasks.js'],
+  apis: ['./src/swagger/tasks.js'],
 };
 
 const swaggerDocs = swaggerJsdoc(options)
