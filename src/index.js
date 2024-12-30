@@ -6,9 +6,9 @@ import swaggerDocs from "./swagger.js";
 import cors from "cors";
 import dotenv from "dotenv";
 
-dotenv.config({ path: ".env" });
-const PORT = process.env.PORT;
+dotenv.config({path: './src/.env'})
 const URL = process.env.MONGO_URL;
+const PORT = process.env.PORT || 3100;
 
 const app = express();
 
