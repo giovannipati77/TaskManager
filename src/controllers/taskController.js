@@ -117,7 +117,7 @@ export const deleteTask = [
   check("_id")
     .custom((value) => mongoose.Types.ObjectId.isValid(value))
     .withMessage("El id proporcionado no es válido."),
-  
+
   async (req, res) => {
     const errors = validationResult(req);
     if (!errors.isEmpty()) {
@@ -128,6 +128,12 @@ export const deleteTask = [
     }
     try {
       const { _id } = req.params;
+
+      if (_id === "") {
+        return res.status(400)({
+          message: "Id no encontrado",
+        });
+      }
       const deletedTask = await tasks.findByIdAndDelete(_id);
 
       if (!deletedTask) {
@@ -148,5 +154,3 @@ export const deleteTask = [
     }
   },
 ];
-
-
