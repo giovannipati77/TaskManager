@@ -1,0 +1,6 @@
+build:
+  - npm install
+
+run:
+  cmd: npm start
+  port: 3100
