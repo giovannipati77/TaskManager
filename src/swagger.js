@@ -6,7 +6,7 @@ const options = {
     info: {
       title: 'Task API',
       version: '1.0.0',
-      description: 'A simple CRUD API for tasks',
+      description: 'API realizado con Node.js,mongo para la gestion de tareas',
     },
     servers: [
       {

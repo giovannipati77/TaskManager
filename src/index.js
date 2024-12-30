@@ -4,13 +4,17 @@ import swaggerUi from "swagger-ui-express";
 import router from "./routes/taskRoutes.js";
 import swaggerDocs from "./swagger.js";
 import cors from "cors";
+import dotenv from "dotenv";
+
+dotenv.config({ path: ".env" });
+const PORT = process.env.PORT;
+const URL = process.env.MONGO_URL;
 
 const app = express();
-const PORT = 3100;
 
 app.use(express.json());
 mongoose
-  .connect("mongodb://localhost:27017/task_coally")
+  .connect(URL)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.log("error Conect to Mongo ", err));
 
